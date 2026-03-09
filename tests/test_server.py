@@ -320,7 +320,10 @@ class TestHomeAssistantMCPServer:
         mock_hass.config.path = Mock(return_value=str(automations_file))
         mock_hass.services.async_call = AsyncMock()
 
-        new_yaml = "alias: Night Mode\ntrigger:\n- platform: time\n  at: '23:00:00'\naction:\n- service: light.turn_off\n"
+        new_yaml = (
+            "alias: Night Mode\ntrigger:\n- platform: time\n"
+            "  at: '23:00:00'\naction:\n- service: light.turn_off\n"
+        )
 
         result = await server.tools._create_automation({"config": new_yaml})
 

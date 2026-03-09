@@ -6,7 +6,6 @@ import re
 from typing import Any
 
 import yaml
-
 from homeassistant.core import HomeAssistant
 from mcp.types import TextContent, Tool
 
@@ -110,7 +109,10 @@ class MCPTools:
                     "properties": {
                         "automation_id": {
                             "type": "string",
-                            "description": "The automation ID to update (e.g., automation.morning_lights)",
+                            "description": (
+                                "The automation ID to update "
+                                "(e.g., automation.morning_lights)"
+                            ),
                         },
                         "config": {
                             "type": "string",
@@ -128,7 +130,11 @@ class MCPTools:
                     "properties": {
                         "config": {
                             "type": "string",
-                            "description": "The automation configuration as a YAML string. The 'alias' field is required. An 'id' will be generated automatically if not provided.",
+                            "description": (
+                                "The automation configuration as a YAML string. "
+                                "The 'alias' field is required. An 'id' will be "
+                                "generated automatically if not provided."
+                            ),
                         },
                     },
                     "required": ["config"],
@@ -349,7 +355,10 @@ class MCPTools:
             return [
                 TextContent(
                     type="text",
-                    text=f"Automation with id '{new_config['id']}' already exists. Use update_automation_config to modify it.",
+                    text=(
+                        f"Automation with id '{new_config['id']}' already exists. "
+                        "Use update_automation_config to modify it."
+                    ),
                 )
             ]
 
