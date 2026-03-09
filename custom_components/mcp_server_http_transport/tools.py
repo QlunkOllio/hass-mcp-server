@@ -110,8 +110,7 @@ class MCPTools:
                         "automation_id": {
                             "type": "string",
                             "description": (
-                                "The automation ID to update "
-                                "(e.g., automation.morning_lights)"
+                                "The automation ID to update " "(e.g., automation.morning_lights)"
                             ),
                         },
                         "config": {
