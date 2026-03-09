@@ -196,7 +196,7 @@ class TestMCPEndpointView:
         body = json.loads(response.body)
         assert body["jsonrpc"] == "2.0"
         assert "tools" in body["result"]
-        assert len(body["result"]["tools"]) == 6
+        assert len(body["result"]["tools"]) == 7
         tool_names = [t["name"] for t in body["result"]["tools"]]
         assert "get_state" in tool_names
         assert "call_service" in tool_names
@@ -204,6 +204,7 @@ class TestMCPEndpointView:
         assert "list_automations" in tool_names
         assert "get_automation_config" in tool_names
         assert "update_automation_config" in tool_names
+        assert "create_automation" in tool_names
 
     async def test_post_tools_call_get_state(self, view, mock_hass):
         """Test POST with tools/call for get_state."""
